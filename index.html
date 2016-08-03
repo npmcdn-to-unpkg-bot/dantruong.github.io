@@ -1,0 +1,39 @@
+---
+layout: default
+title: Blog
+---
+
+<!--<header class="intro-header" style="background-image: url('img/home-bg.jpg')">-->
+<header class="intro-header" style="background-image: url('img/binary.png')">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="site-heading">
+					<h1>Blog</h1>
+					<hr class="small">
+					<span class="subheading">Articles on Technology and Personal Projects</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="container">
+	<div class="row masonry-container">
+	{% for post in site.posts %}
+		<div class="col-md-3 col-sm-6 item">
+			<div class="post-preview">
+				<a href="{{ post.url | prepend: site.baseurl }}">
+					<h2 class="post-title">
+						{{ post.title }}
+					</h2>
+					<h3 class="post-subtitle">
+						{{ post.subhead }}
+					</h3>
+				</a>
+				<p class="post-meta">Posted on {{ post.date | date: "%b %-d, %Y" }}</p>
+			</div>
+		</div>
+    {% endfor %}
+	</div>
+</div>
+
